@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package produto;
+
+service ProdutoService {
+  rpc Produzir(ProdutoRequest) returns (ProdutoResponse);
+  rpc Consumir(ConsumirRequest) returns (ProdutoResponse);
+}
+
+message ProdutoRequest {
+  string nome = 1;
+}
+
+message ConsumirRequest {
+  string solicitante = 1;
+}
+
+message ProdutoResponse {
+  string mensagem = 1;
+}
