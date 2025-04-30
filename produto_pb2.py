@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rproduto.proto\x12\x07produto\"\x1e\n\x0eProdutoRequest\x12\x0c\n\x04nome\x18\x01 \x01(\t\"&\n\x0f\x43onsumirRequest\x12\x13\n\x0bsolicitante\x18\x01 \x01(\t\"#\n\x0fProdutoResponse\x12\x10\n\x08mensagem\x18\x01 \x01(\t2\x8f\x01\n\x0eProdutoService\x12=\n\x08Produzir\x12\x17.produto.ProdutoRequest\x1a\x18.produto.ProdutoResponse\x12>\n\x08\x43onsumir\x12\x18.produto.ConsumirRequest\x1a\x18.produto.ProdutoResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rproduto.proto\x12\x07produto\"\x1e\n\x0eProdutoRequest\x12\x0c\n\x04nome\x18\x01 \x01(\t\"$\n\rVenderRequest\x12\x13\n\x0bsolicitante\x18\x01 \x01(\t\"#\n\x0fProdutoResponse\x12\x10\n\x08mensagem\x18\x01 \x01(\t2\x88\x01\n\x0eProdutoService\x12:\n\x05\x41ssar\x12\x17.produto.ProdutoRequest\x1a\x18.produto.ProdutoResponse\x12:\n\x06Vender\x12\x16.produto.VenderRequest\x1a\x18.produto.ProdutoResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,10 +33,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_PRODUTOREQUEST']._serialized_start=26
   _globals['_PRODUTOREQUEST']._serialized_end=56
-  _globals['_CONSUMIRREQUEST']._serialized_start=58
-  _globals['_CONSUMIRREQUEST']._serialized_end=96
-  _globals['_PRODUTORESPONSE']._serialized_start=98
-  _globals['_PRODUTORESPONSE']._serialized_end=133
-  _globals['_PRODUTOSERVICE']._serialized_start=136
-  _globals['_PRODUTOSERVICE']._serialized_end=279
+  _globals['_VENDERREQUEST']._serialized_start=58
+  _globals['_VENDERREQUEST']._serialized_end=94
+  _globals['_PRODUTORESPONSE']._serialized_start=96
+  _globals['_PRODUTORESPONSE']._serialized_end=131
+  _globals['_PRODUTOSERVICE']._serialized_start=134
+  _globals['_PRODUTOSERVICE']._serialized_end=270
 # @@protoc_insertion_point(module_scope)

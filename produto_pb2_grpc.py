@@ -34,14 +34,14 @@ class ProdutoServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.Produzir = channel.unary_unary(
-                '/produto.ProdutoService/Produzir',
+        self.Assar = channel.unary_unary(
+                '/produto.ProdutoService/Assar',
                 request_serializer=produto__pb2.ProdutoRequest.SerializeToString,
                 response_deserializer=produto__pb2.ProdutoResponse.FromString,
                 _registered_method=True)
-        self.Consumir = channel.unary_unary(
-                '/produto.ProdutoService/Consumir',
-                request_serializer=produto__pb2.ConsumirRequest.SerializeToString,
+        self.Vender = channel.unary_unary(
+                '/produto.ProdutoService/Vender',
+                request_serializer=produto__pb2.VenderRequest.SerializeToString,
                 response_deserializer=produto__pb2.ProdutoResponse.FromString,
                 _registered_method=True)
 
@@ -49,13 +49,13 @@ class ProdutoServiceStub(object):
 class ProdutoServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def Produzir(self, request, context):
+    def Assar(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Consumir(self, request, context):
+    def Vender(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -64,14 +64,14 @@ class ProdutoServiceServicer(object):
 
 def add_ProdutoServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Produzir': grpc.unary_unary_rpc_method_handler(
-                    servicer.Produzir,
+            'Assar': grpc.unary_unary_rpc_method_handler(
+                    servicer.Assar,
                     request_deserializer=produto__pb2.ProdutoRequest.FromString,
                     response_serializer=produto__pb2.ProdutoResponse.SerializeToString,
             ),
-            'Consumir': grpc.unary_unary_rpc_method_handler(
-                    servicer.Consumir,
-                    request_deserializer=produto__pb2.ConsumirRequest.FromString,
+            'Vender': grpc.unary_unary_rpc_method_handler(
+                    servicer.Vender,
+                    request_deserializer=produto__pb2.VenderRequest.FromString,
                     response_serializer=produto__pb2.ProdutoResponse.SerializeToString,
             ),
     }
@@ -86,7 +86,7 @@ class ProdutoService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def Produzir(request,
+    def Assar(request,
             target,
             options=(),
             channel_credentials=None,
@@ -99,7 +99,7 @@ class ProdutoService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/produto.ProdutoService/Produzir',
+            '/produto.ProdutoService/Assar',
             produto__pb2.ProdutoRequest.SerializeToString,
             produto__pb2.ProdutoResponse.FromString,
             options,
@@ -113,7 +113,7 @@ class ProdutoService(object):
             _registered_method=True)
 
     @staticmethod
-    def Consumir(request,
+    def Vender(request,
             target,
             options=(),
             channel_credentials=None,
@@ -126,8 +126,8 @@ class ProdutoService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/produto.ProdutoService/Consumir',
-            produto__pb2.ConsumirRequest.SerializeToString,
+            '/produto.ProdutoService/Vender',
+            produto__pb2.VenderRequest.SerializeToString,
             produto__pb2.ProdutoResponse.FromString,
             options,
             channel_credentials,

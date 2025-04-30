@@ -7,7 +7,7 @@ def run():
     stub = produto_pb2_grpc.ProdutoServiceStub(canal)
 
     nome = input("Digite seu nome: ")
-    resposta = stub.Consumir(produto_pb2.ConsumirRequest(solicitante=nome))
+    resposta = stub.Vender(produto_pb2.VenderRequest(solicitante=nome))
     print("Servidor respondeu:", resposta.mensagem)
 
 if __name__ == '__main__':

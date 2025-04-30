@@ -7,17 +7,17 @@ class ProdutoService(produto_pb2_grpc.ProdutoServiceServicer):
     def __init__(self):
         self.estoque = []
 
-    def Produzir(self, request, context):
+    def Assar(self, request, context):
         self.estoque.append(request.nome)
         mensagem = f"Produto '{request.nome}' produzido com sucesso!"
         return produto_pb2.ProdutoResponse(mensagem=mensagem)
 
-    def Consumir(self, request, context):
+    def Vender(self, request, context):
         if self.estoque:
             produto = self.estoque.pop(0)
-            mensagem = f"{request.solicitante} consumiu o produto '{produto}'."
+            mensagem = f"{request.solicitante} comprou o produto '{produto}'."
         else:
-            mensagem = "Estoque vazio. Nenhum produto para consumir."
+            mensagem = "Estoque vazio. Nenhum produto para vender."
         return produto_pb2.ProdutoResponse(mensagem=mensagem)
 
 def serve():

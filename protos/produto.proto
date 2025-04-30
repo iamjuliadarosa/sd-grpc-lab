@@ -3,15 +3,15 @@ syntax = "proto3";
 package produto;
 
 service ProdutoService {
-  rpc Produzir(ProdutoRequest) returns (ProdutoResponse);
-  rpc Consumir(ConsumirRequest) returns (ProdutoResponse);
+  rpc Assar(ProdutoRequest) returns (ProdutoResponse);
+  rpc Vender(VenderRequest) returns (ProdutoResponse);
 }
 
 message ProdutoRequest {
   string nome = 1;
 }
 
-message ConsumirRequest {
+message VenderRequest {
   string solicitante = 1;
 }
 
